@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "getBanda:build:production"
+              "buildTarget": "getBanda:build:production"
             },
             "development": {
-              "browserTarget": "getBanda:build:development"
+              "buildTarget": "getBanda:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "getBanda:build"
+            "buildTarget": "getBanda:build"
           }
         },
         "test": {
