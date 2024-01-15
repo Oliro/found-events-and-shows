@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ViewResultComponent } from './view-result/view-result.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     SearchComponent,
+    ViewResultComponent,
     NgbModule
   ],
   providers: [],

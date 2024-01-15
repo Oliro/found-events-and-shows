@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'getBanda';
+
+  public query!: string;
+
+  getEvent(query: string) {
+    this.query = query;
+  }
+
+  
+
 }
