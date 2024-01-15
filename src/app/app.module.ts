@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewResultComponent } from './view-result/view-result.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ViewResultComponent } from './view-result/view-result.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     SearchComponent,
     ViewResultComponent,
     NgbModule
