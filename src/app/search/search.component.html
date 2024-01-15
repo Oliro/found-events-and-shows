@@ -1,4 +1,33 @@
-<div class="container">
-    <p>search works!</p>
-</div>
+    <div class="container">
+    
+        <br>
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-md-10 col-lg-8">
+
+                <div class="card card-sm">
+                    <div class="row card-body no-gutters align-items-center">
+
+                        <div class="col-auto">
+                            <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                        </div>
+                        
+                        <div class="col">
+                            <input class="form-control form-control-lg" type="search" placeholder="Digite a Banda" [(ngModel)]="query">
+                        </div>
+
+                        <div class="col-auto">
+                            <button class="btn btn-lg btn-success" type="submit" (click)="search()" >Search</button>
+                        </div>
+
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+     
+    </div>
+
+
 
