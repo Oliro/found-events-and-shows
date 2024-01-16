@@ -1,3 +1,23 @@
-@for (item of items | async; track $index) {
-<span>{{item.name}}</span>
-}
+    <div class="container py-5">
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            @for (item of items | async; track $index) {
+                <div class="col">
+                    <div class="card shadow-sm">
+
+                        <img class="card-img-top" width="100%" height="225" [src]="item.images[0].url">
+
+                        <div class="card-body bg-light">
+                            <p class="card-text">{{item.classifications[0].genre?.name}}</p>
+                            <a class="card-text h5">{{item.name}}</a>
+                        </div>
+
+                    </div>
+                </div>
+            }@empty { 
+                <p class="container text-center text-light mt-5">Nenhum resultado...</p>
+              }
+
+        </div>
+    </div>

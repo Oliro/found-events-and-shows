@@ -1,8 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
-
-import { GoogleApiService } from '../services/googleApi.service';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { CommonModule } from '@angular/common';
+
 import { ticketMasterApiService } from '../services/ticketMasterApi.service';
 import { Attraction } from '../models/ticketMaster';
 
@@ -23,8 +22,14 @@ export class ViewResultComponent implements OnChanges {
 
   ngOnChanges(): void {
 
-    if(this.query  !== undefined) this.items = this.ticketMasterApiService.search(this.query);
-      
+    if (this.query !== undefined) {
+      this.items = this.ticketMasterApiService.search(this.query).pipe(
+        catchError((err) => {
+          throw 'Erro ao consultar API: ' + err;
+        })
+      )
+    };
+
   }
 
 }
