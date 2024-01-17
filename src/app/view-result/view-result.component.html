@@ -6,7 +6,10 @@
                 <app-cards [item]="item"></app-cards>
             </div>
         }@empty {
-            <p class="container text-center h5">Nenhum resultado...</p>
+            @if((items | async) == null && query != undefined)
+             {
+               <p class="container text-danger text-center h6">Nenhum resultado...</p>
+             }
         }
 
     </div>
