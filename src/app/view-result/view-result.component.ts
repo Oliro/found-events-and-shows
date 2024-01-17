@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 
 import { ticketMasterApiService } from '../services/ticketMasterApi.service';
 import { Attraction } from '../models/ticketMaster';
+import { CardsComponent } from '../cards/cards.component';
 
 @Component({
   selector: 'app-view-result',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardsComponent],
   templateUrl: './view-result.component.html',
   styleUrl: './view-result.component.sass'
 })
@@ -28,6 +29,8 @@ export class ViewResultComponent implements OnChanges {
           throw 'Erro ao consultar API: ' + err;
         })
       )
+
+      this.items.subscribe(x => console.log(x))
     };
 
   }

@@ -1,4 +1,4 @@
-<div>
+<div [ngClass]="{'align-vertical': query == undefined}">
     <app-search (queryEvent)="getEvent($event)"></app-search>
     <app-view-result [query]="query"></app-view-result>
 </div>

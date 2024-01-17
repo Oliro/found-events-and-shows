@@ -1,0 +1,39 @@
+        <article class="material-card Red" [ngClass]="randomBgColor" #materialCard>
+          <h2>
+            <span>{{item.name}}</span>
+            <strong>
+              <i class="fa-solid fa-star"></i>
+              {{item.classifications[0].genre?.name}}
+            </strong>
+          </h2>
+          <div class="mc-content">
+            <div class="img-container">
+              <img class="configImg" [src]="item.images[1].url">
+            </div>
+            <div class="mc-description">
+              He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The
+              Prophecy trilogy, The Dogs of War ...
+            </div>
+          </div>
+          <a class="mc-btn-action" (click)="details()">
+            <i class="fa fa-bars"></i>
+          </a>
+          <div class="mc-footer">
+            <h4>
+              Social
+            </h4>
+
+            @if(item.externalLinks && item.externalLinks.facebook && item.externalLinks.facebook[0]?.url)
+            {<a [href]="item.externalLinks?.facebook[0]?.url" class="fa-brands fa-fw fa-facebook"></a>}
+
+            @if(item.externalLinks && item.externalLinks.twitter && item.externalLinks.twitter[0]?.url)
+            {<a [href]="item.externalLinks?.twitter[0]?.url" class="fa-brands fa-fw fa-twitter"></a>}
+            
+            @if(item.externalLinks && item.externalLinks.linkedin && item.externalLinks.linkedin[0]?.url)
+            {<a [href]="item.externalLinks?.linkedin[0]?.url" class="fa-brands fa-fw fa-linkedin"></a>}
+
+            @if(item.externalLinks && item.externalLinks.youtube && item.externalLinks.youtube[0]?.url)
+            {<a [href]="item.externalLinks?.youtube[0]?.url" class="fa-brands fa-fw fa-youtube"></a>}
+
+          </div>
+        </article>
