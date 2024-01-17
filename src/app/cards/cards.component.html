@@ -1,6 +1,6 @@
         <article class="material-card Red" [ngClass]="randomBgColor" #materialCard>
           <h2>
-            <span>{{item.name}}</span>
+             <span>{{reduceValue(item.name)}}</span>
             <strong>
               <i class="fa-solid fa-star"></i>
               {{item.classifications[0].genre?.name}}
@@ -11,8 +11,7 @@
               <img class="configImg" [src]="item.images[1].url">
             </div>
             <div class="mc-description">
-              He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The
-              Prophecy trilogy, The Dogs of War ...
+              <span>{{item.name}}</span>
             </div>
           </div>
           <a class="mc-btn-action" (click)="details()">

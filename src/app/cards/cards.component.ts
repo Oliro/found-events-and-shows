@@ -69,4 +69,8 @@ export class CardsComponent implements OnInit{
     return this.randomBgColor = valoresCores[Math.floor(Math.random() * valoresCores.length)];
   }
 
+  reduceValue(name: string) {
+    return name.split(' ').slice(0, 2).join(' ');
+  }
+
 }
