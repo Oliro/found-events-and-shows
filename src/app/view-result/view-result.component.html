@@ -1,7 +1,7 @@
 <section class="container mt-5">
     <div class="row active-with-click ">
 
-        @for (item of items | async; track $index) {
+        @for (item of items | async | pagination: currentPage: contentPerPage; track $index) {
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <app-cards [item]="item"></app-cards>
             </div>
@@ -13,4 +13,11 @@
         }
 
     </div>
+
+    <ngb-pagination class="d-flex justify-content-center mt-5"
+        [collectionSize]="collectionSize" [(page)]="currentPage"
+        [pageSize]="contentPerPage" (pageChange)="onPageChange($event)"
+        [maxSize]="3"aria-label="Default pagination" size="lg">
+    </ngb-pagination>
+
 </section>
