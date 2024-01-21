@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
+import { Component, Input, OnChanges, inject } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
@@ -27,18 +27,30 @@ export class ViewResultComponent implements OnChanges {
   public contentPerPage: number = 8;
   public collectionSize: number = 0;
 
+  showMessage: boolean = true;
+
   ngOnChanges(): void {
 
     if (this.query !== undefined) {
+
+      this.showMessage = false;
+      this.collectionSize = 0;
+
       this.items = this.ticketMasterApiService.search(this.query).pipe(
         catchError((err) => {
           throw 'Erro ao consultar API: ' + err;
         })
       )
 
-      this.items.subscribe(result => {
+      this.items
+      .pipe(
+        catchError((err) => {
+          this.showMessage = true;
+          throw 'Sem resultados: ' + err;
+        }))
+      .subscribe(result => {
         
-        console.log(result);
+        //console.log(result);
         this.getCollectionSize(result);
 
       })
@@ -47,7 +59,11 @@ export class ViewResultComponent implements OnChanges {
   }
 
   getCollectionSize(result: any) {
+
     this.collectionSize = result.length;
+
+    this.showMessage = this.collectionSize > 0 ? false : true;
+
   }
 
   onPageChange(page: number){

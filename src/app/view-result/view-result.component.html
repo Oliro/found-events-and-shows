@@ -6,10 +6,7 @@
                 <app-cards [item]="item"></app-cards>
             </div>
         }@empty {
-            @if((items | async) == null && query != undefined)
-             {
-               <p class="container text-danger text-center h6">Nenhum resultado...</p>
-             }
+            <p class="container text-danger text-center h6" [ngClass]="{'d-none' : !showMessage}">Nenhum resultado...</p>
         }
 
     </div>
