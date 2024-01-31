@@ -2,11 +2,12 @@ import { Component, Input, OnChanges, inject } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
-import { ticketMasterApiService } from '../services/ticketMasterApi.service';
+
 import { Attraction } from '../models/ticketMaster';
 import { CardsComponent } from '../cards/cards.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaginationPipe } from '../pipes/pagination.pipe';
+import { ticketMasterApiService } from '../services/ticketMasterApi.service';
 
 @Component({
   selector: 'app-view-result',
