@@ -1,7 +1,7 @@
 <div [ngClass]="{'align-vertical': query == undefined}">
     <header class="text-center mt-3">
         <span>Consulta:</span>
-        <h1 class="h3 text-primary">Ticketmaster Discovery API</h1>
+        <h1 class="h3 text-name">Ticketmaster Discovery API</h1>
     </header>
     <app-search (queryEvent)="getEvent($event)"></app-search>
     <app-view-result [query]="query"></app-view-result>
