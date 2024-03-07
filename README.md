@@ -1,6 +1,11 @@
-# GetBanda
+# Ticketmaster Discovery API
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+Este projeto de TESTE foi desenvolvido em Angular 16 e a API da Ticket Master. Nele, você pode pesquisar por show e eventos.
+
+Você pode visualizar o projeto funcionando [aqui](https://oliro.github.io/found-events-and-shows/).
+
+
+## This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
 ## Development server
 
